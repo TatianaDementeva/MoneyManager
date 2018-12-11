@@ -1,0 +1,30 @@
+.o-header-wrapper {
+  background-color: #282e33;
+}
+
+.o-header {
+  padding: 25px 0;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.o-header__link {
+  margin-left: 40px;
+  font-size: 18px;
+  font-family: sans-serif, Arial;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #777;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.o-header__link:hover {
+  color: #f6f7f8;
+  background-color: #495055;
+}
+
+.o-header__link_current {
+  color: #f6f7f8;
+  background-color: #42b7ff;
+}

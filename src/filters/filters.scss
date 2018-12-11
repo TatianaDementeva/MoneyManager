@@ -1,0 +1,29 @@
+.reports-filters__wrapper {
+  background: #fff;
+  border-bottom: 1px solid  #ccc;
+}
+
+.reports-filters {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1180px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+.reports-filters__item {
+  min-width: 100px;
+  display: inline-block;
+  cursor: pointer;
+  //margin-left: 40px;
+  font-size: 18px;
+  font-family: sans-serif, Arial;
+  padding: 15px;
+  text-align: center;
+  color: #777;
+}
+
+.reports-filters__item_active {
+  color: #f6f7f8;
+  background-color: #495055;
+}

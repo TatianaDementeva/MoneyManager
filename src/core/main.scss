@@ -1,0 +1,63 @@
+@import "../tasks/tasks.scss";
+@import "../header/header.scss";
+@import "/node_modules/react-day-picker/lib/style.css";
+@import "../filters/filters.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  //width: 1180px;
+
+  /*
+  margin: 0;
+  padding: 0;
+  padding-bottom: 0;
+  padding-left: 34;
+
+  text-align: center;
+*/
+  background: #f6f7f8;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.test1 {
+  text-decoration: underline;
+}
+
+.task {
+  text-decoration: none;
+  color: red;
+  cursor: pointer;
+}
+
+.task_completed {
+  color: black;
+  text-decoration: line-through;
+}
+
+.circle {
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+  //min-width: 1em;
+  //min-height: 1em;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin: 50px;
+  background: red;
+  padding: 100px;
+}
+
+.tag {
+  //margin: 0 10px;
+  height: 0;
+}

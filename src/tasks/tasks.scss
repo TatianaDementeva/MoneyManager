@@ -1,0 +1,12 @@
+body {
+  background: url("shot-5.jpg");
+}
+
+.tasks {
+  background: blue;
+  min-height: 300px;
+
+  &_loading {
+    background: red;
+  }
+}
