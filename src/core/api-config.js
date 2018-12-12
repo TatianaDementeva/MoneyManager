@@ -8,7 +8,7 @@ export const createTask = {
   method: 'POST'
 };
 // my api
-export const fetchCommoditiesByDate = {
+export const fetchCommoditiesByDay = {
   path: '/api/commodities/:date',
   method: 'GET'
 };

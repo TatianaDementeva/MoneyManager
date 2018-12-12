@@ -2,20 +2,22 @@ import React, { Component } from 'react';
 import Filters from '../filters/filters';
 import Chart from '../pieChart/pieChart';
 import createRequest from '../core/create-request';
-import { fetchCommoditiesByDate } from '../core/api-config';
+import { fetchCommoditiesByDay } from '../core/api-config';
 
 export default class Reports extends Component {
   state = {
+    isLoading: true,
     activeFilter: 'ДЕНЬ',
     commodities: []
   };
 
   componentDidMount() {
-    const nowDate = new Date();
-    const date = `${nowDate.getDate()}.${nowDate.getMonth()}.${nowDate.getFullYear()}`;
-    createRequest(fetchCommoditiesByDate, { date: '03.12.2018' }).then((response) => {
+    let nowDate = new Date();
+    nowDate = nowDate.getTime();
+
+    createRequest(fetchCommoditiesByDay, { date: nowDate }).then((response) => {
       if (response.status === 'OK') {
-        this.setState({ commodities: response.data });
+        this.setState({ isLoading: false, commodities: response.data });
       }
       console.log(response);
     });
@@ -26,13 +28,49 @@ export default class Reports extends Component {
     this.setState({ activeFilter: newFilter });
   };
 
+  createTagsArray() {
+    const { commodities } = this.state;
+    console.log('commodities', commodities);
+    const tags = new Array(0);
+    console.log('tags', tags);
+    tags.push({
+      name: commodities[0].tag,
+      price: commodities[0].price
+    });
+    console.log('tags after 0', tags);
+
+    function addInTags(element) {
+      console.log('ele.tag', element.tag);
+      const index = tags.indexOf({ tag: element.tag });
+      console.log(index);
+      if (index === -1) {
+        tags.push({
+          name: element.tag,
+          price: element.price
+        });
+      } else {
+        console.log(tags[index]);
+        tags[index] = {
+          name: tags[index].tag,
+          price: tags[index].price + element.price
+        };
+      }
+    }
+    commodities.forEach(addInTags);
+    console.log(tags);
+    return tags;
+  }
+
   render() {
-    const { activeFilter, commodities } = this.state;
-    return (
-      <>
-        <Filters activeFilter={activeFilter} changeFilter={this.changeFilter} />
-        <Chart data={commodities} />
-      </>
-    );
+    const { activeFilter, commodities, isLoading } = this.state;
+    if (!isLoading) {
+      return (
+        <>
+          <Filters activeFilter={activeFilter} changeFilter={this.changeFilter} />
+          <Chart data={this.createTagsArray()} />
+        </>
+      );
+    }
+    return <div>Загрузка данных</div>;
   }
 }
