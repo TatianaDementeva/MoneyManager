@@ -1,0 +1,81 @@
+.tags-list {
+  width: 430px;
+  float: right;
+  margin: 30px 0 20px 0;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  height: 85vh;
+  background: #fff;
+  padding: 15px 35px;
+  overflow: auto;
+}
+
+.tag {
+  width: 306px;
+  height: 50px;
+  margin: 0 auto;
+  padding-top: 15px;
+  //overflow: scroll;
+
+  &__arrow {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    padding: 15px;
+  }
+
+  &__name {
+    display: inline-block;
+    width: 206px;
+    height: 50px;
+    padding: 15px 15px;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  &__total {
+    display: inline-block;
+    width: 100px;
+    color: red;
+    height: 50px;
+    padding: 15px 15px;
+    text-align: right;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+}
+
+.tag:active .Stroke-52 {
+  stroke: #b00b00 !important; // нужно перебить инлайн-стили, так что выбора нет
+  transform: 180 !important;
+}
+
+.commodities {
+  width: 306px;
+  height: 40px;
+  //margin-left: 50px;
+
+  &__name {
+    width: 206px;
+    display: inline-block;
+    padding: 10px;
+    color: #282e33;
+    font-size: 15px;
+  }
+
+  &__price {
+    width: 100px;
+    display: inline-block;
+    text-align: right;
+    padding: 10px;
+    color: #282e33;
+    font-size: 15px;
+  }
+}
+
+/*
+.button:active .path2 {
+  fill: #bada55 !important;
+}
+*/

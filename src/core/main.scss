@@ -2,6 +2,10 @@
 @import "../header/header.scss";
 @import "/node_modules/react-day-picker/lib/style.css";
 @import "../filters/filters.scss";
+@import "../reports/reports.scss";
+@import "../pieChart/pieChart.scss";
+@import "../listCommodities/listCommodities.scss";
+@import "../add/add-commodities.scss";
 
 * {
   box-sizing: border-box;
@@ -55,9 +59,4 @@ body {
   margin: 50px;
   background: red;
   padding: 100px;
-}
-
-.tag {
-  //margin: 0 10px;
-  height: 0;
 }

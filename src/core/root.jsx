@@ -2,27 +2,19 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Header from '../header/header';
 import Reports from '../reports/reports';
+import Add from '../add/add';
 
 function Root() {
   return (
-  // <Tags />
-
+    //        <Route exact path="/" />
     <BrowserRouter>
       <>
         <Header />
-        <Route exact path="/" />
-        <Route path="/reports" component={Reports} />
-        <Route path="/add" />
+
+        <Route exact path="/reports" component={Reports} />
+        <Route path="/add" component={Add} />
       </>
     </BrowserRouter>
-    /*      <BrowserRouter>
-        <div>
-            <Link to="/">tasks</Link>
-            <Link to="/about">about</Link>
-            <Route exact path="/" component={Tasks} />
-            <Route path="/about" component={About} />
-        </div>
-        </BrowserRouter> */
   );
 }
 

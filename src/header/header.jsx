@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
 // eslint-disable-next-line react/prefer-stateless-function
-class Header extends PureComponent {
+class Header extends Component {
   render() {
     return (
       <div className="o-header-wrapper">
@@ -12,22 +12,11 @@ class Header extends PureComponent {
               exact
               className="o-header__link"
               activeClassName="o-header__link_current"
-              to="/"
-            >
-              Категории
-            </NavLink>
-            <NavLink
-              className="o-header__link"
-              activeClassName="o-header__link_current"
               to="/reports"
             >
               Отчёты
             </NavLink>
-            <NavLink
-              className="o-header__link"
-              activeClassName="o-header__link_current"
-              to="/add"
-            >
+            <NavLink className="o-header__link" activeClassName="o-header__link_current" to="/add">
               Добавить
             </NavLink>
           </div>
@@ -38,3 +27,12 @@ class Header extends PureComponent {
 }
 
 export default Header;
+/*  <NavLink
+              exact
+              className="o-header__link"
+              activeClassName="o-header__link_current"
+              to="/"
+            >
+              Категории
+            </NavLink>
+            */

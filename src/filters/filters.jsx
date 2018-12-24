@@ -16,7 +16,7 @@ class Filters extends Component {
     return (
       <div className="reports-filters__wrapper">
         <div className="reports-filters">
-          {['ДЕНЬ', 'НЕДЕЛЯ', 'МЕСЯЦ', 'ГОД', 'ВЫБОР ДАТЫ'].map(item => (
+          {['ДЕНЬ', 'НЕДЕЛЯ', 'МЕСЯЦ', 'ГОД'].map(item => (
             <div
               className={classNames('reports-filters__item', { active: activeFilter === item })}
               onClick={changeFilter}
